@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Instagram Photo Feed</title>
@@ -8,8 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -39,83 +36,84 @@
     </nav>
 
     <div class="text-center mt-4">
-        <button class="btn btn-outline-dark" onclick="mostrarGrid()">
-            <i class="bi bi-grid-3x3"></i>
-        </button>
-        <button class="btn btn-outline-dark" onclick="mostrarLista()">
-            <i class="bi bi-square"></i>
-        </button>
+        <ul class="nav justify-content-center">
+            <li class="nav-item">
+                <button class="btn btn-outline-dark active" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#vistaGrid">
+                    <i class="bi bi-grid-3x3"></i>
+                </button>
+            </li>
+            <li class="nav-item ms-2">
+                <button class="btn btn-outline-dark" 
+                        data-bs-toggle="tab" 
+                        data-bs-target="#vistaLista">
+                    <i class="bi bi-square"></i>
+                </button>
+            </li>
+        </ul>
     </div>
 
-    <div id="vistaGrid" class="container mt-4">
-        <div class="row">
-            <div class="col-md-4"><img src="https://picsum.photos/400?1" class="img-fluid"></div>
-            <div class="col-md-4"><img src="https://picsum.photos/400?2" class="img-fluid"></div>
-            <div class="col-md-4"><img src="https://picsum.photos/400?3" class="img-fluid"></div>
-            <div class="col-md-4"><img src="https://picsum.photos/400?4" class="img-fluid"></div>
-            <div class="col-md-4"><img src="https://picsum.photos/400?5" class="img-fluid"></div>
-            <div class="col-md-4"><img src="https://picsum.photos/400?6" class="img-fluid"></div>
+    <div class="tab-content">
+
+        <div class="tab-pane fade show active" id="vistaGrid">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-4"><img src="https://picsum.photos/400?1" class="img-fluid"></div>
+                    <div class="col-md-4"><img src="https://picsum.photos/400?2" class="img-fluid"></div>
+                    <div class="col-md-4"><img src="https://picsum.photos/400?3" class="img-fluid"></div>
+                    <div class="col-md-4"><img src="https://picsum.photos/400?4" class="img-fluid"></div>
+                    <div class="col-md-4"><img src="https://picsum.photos/400?5" class="img-fluid"></div>
+                    <div class="col-md-4"><img src="https://picsum.photos/400?6" class="img-fluid"></div>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div id="vistaLista" class="container mt-4" style="display:none;">
-        <div class="row justify-content-center d-flex flex-column align-items-center">
+        <div class="tab-pane fade" id="vistaLista">
+            <div class="container mt-4 d-flex flex-column align-items-center">
 
-            <div class="col-6 mb-4">
-                <div class="card shadow-sm">
-
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0">Imagen 7</h3>
-                        <div>
-                            <strong>125</strong> · <strong>45</strong>
+                <div class="col-6 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>Imagen 7</h5>
+                            <span><strong>125</strong> · <strong>45</strong></span>
+                        </div>
+                        <img src="https://picsum.photos/900?7" class="img-fluid">
+                        <div class="card-body">
+                            <small><strong>230</strong> 98 Like</small>
                         </div>
                     </div>
-
-                    <img src="https://picsum.photos/900?7" class="img-fluid">
-
-                    <div class="card-body">
-                        <small><strong>230</strong> 98 Like</small>
-                    </div>
                 </div>
-            </div>
 
-            <div class="col-6 mb-4">
-                <div class="card shadow-sm">
-
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0">Imagen 8</h3>
-                        <div>
-                            <strong>210</strong> · <strong>67</strong>
+                <div class="col-6 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>Imagen 8</h5>
+                            <span><strong>210</strong> · <strong>67</strong></span>
+                        </div>
+                        <img src="https://picsum.photos/900?8" class="img-fluid">
+                        <div class="card-body">
+                            <small><strong>450</strong> 120 Like</small>
                         </div>
                     </div>
-
-                    <img src="https://picsum.photos/900?8" class="img-fluid">
-
-                    <div class="card-body">
-                        <small><strong>450</strong> 120 Like</small>
-                    </div>
                 </div>
-            </div>
 
-            <div class="col-6 mb-4">
-                <div class="card shadow-sm">
-
-                    <div class="card-body d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0">Imagen 9</h3>
-                        <div>
-                            <strong>89</strong> · <strong>33</strong>
+                <div class="col-6 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>Imagen 9</h5>
+                            <span><strong>89</strong> · <strong>33</strong></span>
+                        </div>
+                        <img src="https://picsum.photos/900?9" class="img-fluid">
+                        <div class="card-body">
+                            <small><strong>310</strong> 76 Like</small>
                         </div>
                     </div>
-
-                    <img src="https://picsum.photos/900?9" class="img-fluid">
-
-                    <div class="card-body">
-                        <small><strong>310</strong> 76 Like</small>
-                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
+
     </div>
 
     <div class="modal fade" id="modalPost">
@@ -125,12 +123,10 @@
                     <h5>Create a new post</h5>
                     <button class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-
                 <div class="modal-body">
                     <textarea class="form-control mb-3" placeholder="Add caption"></textarea>
                     <input type="file" class="form-control">
                 </div>
-
                 <div class="modal-footer">
                     <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button class="btn btn-primary">Publish</button>
@@ -138,19 +134,8 @@
             </div>
         </div>
     </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        function mostrarGrid() {
-            document.getElementById("vistaGrid").style.display = "block";
-            document.getElementById("vistaLista").style.display = "none";
-        }
-        function mostrarLista() {
-            document.getElementById("vistaGrid").style.display = "none";
-            document.getElementById("vistaLista").style.display = "block";
-        }
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
