@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <title>Instagram Photo Feed</title>
@@ -7,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -16,7 +19,7 @@
             <h4><i class="bi bi-instagram"></i> Instagram</h4>
 
             <div>
-                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#modalPost">
+                <button class="btn btn-success me-2" data-bs-toggle="modal" data-bs-target="#modalPost">
                     Create Post
                 </button>
 
@@ -24,11 +27,30 @@
                     <button class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown">
                         Settings
                     </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item text-center" href="#">Profile</a></li>
-                        <li><a class="dropdown-item text-center" href="#">Accessibility</a></li>
-                        <li><a class="dropdown-item text-center" href="#">Privacy and Data</a></li>
-                        <li><a class="dropdown-item text-danger text-center" href="#">Logout</a></li>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-person me-2"></i> Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-universal-access me-2"></i> Accessibility
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-shield-lock me-2"></i> Privacy and Data
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+                        <li>
+                            <a class="dropdown-item text-danger" href="#">
+                                <i class="bi bi-box-arrow-right me-2"></i> Logout
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -36,106 +58,116 @@
     </nav>
 
     <div class="text-center mt-4">
-        <ul class="nav justify-content-center">
-            <li class="nav-item">
-                <button class="btn btn-outline-dark active" 
-                        data-bs-toggle="tab" 
-                        data-bs-target="#vistaGrid">
-                    <i class="bi bi-grid-3x3"></i>
-                </button>
-            </li>
-            <li class="nav-item ms-2">
-                <button class="btn btn-outline-dark" 
-                        data-bs-toggle="tab" 
-                        data-bs-target="#vistaLista">
-                    <i class="bi bi-square"></i>
-                </button>
-            </li>
-        </ul>
+        <button class="btn btn-outline-dark" onclick="mostrarGrid()">
+            <i class="bi bi-grid-3x3"></i>
+        </button>
+        <button class="btn btn-outline-dark" onclick="mostrarLista()">
+            <i class="bi bi-square"></i>
+        </button>
     </div>
 
-    <div class="tab-content">
+    <div id="vistaGrid" class="container mt-4">
+        <div class="row g-3">
+            <div class="col-md-4"><img src="https://picsum.photos/400?1" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?2" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?3" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?4" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?5" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?6" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?7" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?8" class="img-fluid grid-img"></div>
+            <div class="col-md-4"><img src="https://picsum.photos/400?9" class="img-fluid grid-img"></div>
+        </div>
+    </div>
 
-        <div class="tab-pane fade show active" id="vistaGrid">
-            <div class="container mt-4">
-                <div class="row">
-                    <div class="col-md-4"><img src="https://picsum.photos/400?1" class="img-fluid"></div>
-                    <div class="col-md-4"><img src="https://picsum.photos/400?2" class="img-fluid"></div>
-                    <div class="col-md-4"><img src="https://picsum.photos/400?3" class="img-fluid"></div>
-                    <div class="col-md-4"><img src="https://picsum.photos/400?4" class="img-fluid"></div>
-                    <div class="col-md-4"><img src="https://picsum.photos/400?5" class="img-fluid"></div>
-                    <div class="col-md-4"><img src="https://picsum.photos/400?6" class="img-fluid"></div>
+    <<div id="vistaLista" class="container mt-4" style="display:none;">
+        <div class="row justify-content-center">
+
+            <div class="col-12 mb-4 d-flex justify-content-center">
+                <img src="https://picsum.photos/900?10" class="img-fluid rounded lista-img">
+            </div>
+
+            <div class="col-12 mb-4 d-flex justify-content-center">
+                <img src="https://picsum.photos/900?11" class="img-fluid rounded lista-img">
+            </div>
+
+            <div class="col-12 mb-4 d-flex justify-content-center">
+                <img src="https://picsum.photos/900?12" class="img-fluid rounded lista-img">
+            </div>
+
+        </div>
+        </div>
+
+        </div>
+        </div>
+
+        <div class="modal fade" id="modalPost">
+            <div class="modal-dialog">
+                <div class="modal-content">
+
+                    <div class="modal-header">
+                        <h5 class="modal-title">Create a new post</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+
+                        <label class="form-label fw-bold">Caption:</label>
+                        <textarea class="form-control mb-3" rows="3" placeholder="Add the caption of your post here">
+                </textarea>
+
+                        <div class="shadow-lg p-3 mb-5 bg-body-tertiary rounded">add the caption of your pots here</div>
+                        <div class="d-flex gap-2 mb-3">
+
+                            <div class="dropdown">
+                                <button class="btn btn-light border" data-bs-toggle="dropdown">
+                                    <i class="bi bi-camera-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Take Photo</a></li>
+                                    <li><a class="dropdown-item" href="#">Upload Photo</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="dropdown">
+                                <button class="btn btn-light border" data-bs-toggle="dropdown">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Add Location</a></li>
+                                    <li><a class="dropdown-item" href="#">Tag Place</a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+                            Close
+                        </button>
+                        <button class="btn btn-success">
+                            Publish
+                        </button>
+                    </div>
+
                 </div>
             </div>
         </div>
 
-        <div class="tab-pane fade" id="vistaLista">
-            <div class="container mt-4 d-flex flex-column align-items-center">
+        <script>
+            function mostrarGrid() {
+                document.getElementById("vistaGrid").style.display = "block";
+                document.getElementById("vistaLista").style.display = "none";
+            }
+            function mostrarLista() {
+                document.getElementById("vistaGrid").style.display = "none";
+                document.getElementById("vistaLista").style.display = "block";
+            }
+        </script>
 
-                <div class="col-6 mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body d-flex justify-content-between">
-                            <h5>Imagen 7</h5>
-                            <span><strong>125</strong> · <strong>45</strong></span>
-                        </div>
-                        <img src="https://picsum.photos/900?7" class="img-fluid">
-                        <div class="card-body">
-                            <small><strong>230</strong> 98 Like</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body d-flex justify-content-between">
-                            <h5>Imagen 8</h5>
-                            <span><strong>210</strong> · <strong>67</strong></span>
-                        </div>
-                        <img src="https://picsum.photos/900?8" class="img-fluid">
-                        <div class="card-body">
-                            <small><strong>450</strong> 120 Like</small>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-body d-flex justify-content-between">
-                            <h5>Imagen 9</h5>
-                            <span><strong>89</strong> · <strong>33</strong></span>
-                        </div>
-                        <img src="https://picsum.photos/900?9" class="img-fluid">
-                        <div class="card-body">
-                            <small><strong>310</strong> 76 Like</small>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-    </div>
-
-    <div class="modal fade" id="modalPost">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5>Create a new post</h5>
-                    <button class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <textarea class="form-control mb-3" placeholder="Add caption"></textarea>
-                    <input type="file" class="form-control">
-                </div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button class="btn btn-primary">Publish</button>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

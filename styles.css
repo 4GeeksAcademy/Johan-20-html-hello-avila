@@ -1,17 +1,12 @@
-body{
-    background:#f5f5f5;
+body {
+    background-color: #f5f5f5;
 }
 
-img{
-    margin-bottom:15px;
-    border-radius:6px;
+.grid-img {
+    border-radius: 8px;
+    transition: 0.3s;
 }
 
-.container{
-    max-width:900px;
+.grid-img:hover {
+    transform: scale(1.03);
 }
-
-.dropdown-menu .dropdown-item{
-    text-align:center;
-}
-
